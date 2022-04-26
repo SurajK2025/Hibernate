@@ -24,10 +24,12 @@ public class App {
 		Answers answer1 = new Answers();
 		answer1.setAnswerId(343);
 		answer1.setAnswer("Java is programming langauge");
+		answer1.setQuestion(q1);
 		
 		Answers answer2 = new Answers();
 		answer2.setAnswerId(33);
 		answer2.setAnswer("With the help of java we can create softwares");
+		answer2.setQuestion(q2);
 		
 		q1.setAnswers(answer1);
 		q2.setAnswers(answer2);
