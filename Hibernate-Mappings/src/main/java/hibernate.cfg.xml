@@ -12,7 +12,7 @@
 		<property name="hbm2ddl.auto">create</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
-		<mapping class="com.oneToMany.Question"/>
-		<mapping class="com.oneToMany.Answers"/>
+		<mapping class="com.manyToOne.Question"/>
+		<mapping class="com.manyToOne.Answers"/>
 	</session-factory>
 </hibernate-configuration>
