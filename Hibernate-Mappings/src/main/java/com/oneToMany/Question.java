@@ -1,10 +1,13 @@
 package com.oneToMany;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -14,21 +17,9 @@ public class Question {
 	private int questionId;
 	private String question;
 	
-	@OneToOne
-	@JoinColumn(name = "ansId")
-	private Answers answers;
-
-	public Question(int questionId, String question, Answers answers) {
-		super();
-		this.questionId = questionId;
-		this.question = question;
-		this.answers = answers;
-	}
-
-	public Question() {
-		super();
-		
-	}
+	@OneToMany(mappedBy = "question")
+	@Column(name = "Que_Ans")
+	private List<Answers> answers;
 
 	public int getQuestionId() {
 		return questionId;
@@ -46,11 +37,11 @@ public class Question {
 		this.question = question;
 	}
 
-	public Answers getAnswers() {
+	public List<Answers> getAnswers() {
 		return answers;
 	}
 
-	public void setAnswers(Answers answers) {
+	public void setAnswers(List<Answers> answers) {
 		this.answers = answers;
 	}
 }

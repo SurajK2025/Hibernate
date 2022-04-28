@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.ManyToAny;
 
 @Entity
 public class Answers {
@@ -12,6 +15,16 @@ public class Answers {
 	@Column(name = "ansId")
 	private int answerId;
 	private String answer;
+	
+	@ManyToOne
+	private Question question;
+	
+	public Question getQuestion() {
+		return question;
+	}
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
 	public int getAnswerId() {
 		return answerId;
 	}
